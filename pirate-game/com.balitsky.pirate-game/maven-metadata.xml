@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>pirate-game</groupId>
+  <artifactId>com.balitsky.pirate-game</artifactId>
+  <versioning>
+    <versions>
+      <version>1.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20190930181311</lastUpdated>
+  </versioning>
+</metadata>
