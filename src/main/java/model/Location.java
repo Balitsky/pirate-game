@@ -1,23 +1,18 @@
 package model;
 
+import ui.UI;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
 public abstract class Location {
     private final Map<String, Location> map;
+    private final UI ui;
 
-    Location(){
-        map = new HashMap<String, Location>();
-    }
-
-    private String infoDirection() {
-        StringBuilder values = new StringBuilder();
-        int i = 1;
-        for (String key : map.keySet()) {
-            values.append(i++).append(". ").append(map.get(key)).append("\n");
-        }
-        return values.toString();
+    Location(UI ui){
+        this.ui = ui;
+        map = new HashMap<>();
     }
 
     public void addDirect(String key, Location location){
@@ -25,7 +20,7 @@ public abstract class Location {
     }
 
     public Location move() {
-        System.out.println(infoDirection());
+        ui.updateDisplay(map);
         int direction = new Scanner(System.in).nextInt();
         action();
         String[] list = (String[]) map.keySet().toArray();
